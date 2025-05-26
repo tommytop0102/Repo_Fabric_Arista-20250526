@@ -1,0 +1,18 @@
+---
+AVD: 5.1
+
+Fabric:
+  name: ATD_DC1_FABRIC
+#  type: VXLAN
+#  Location: San Jose, US
+
+Resources:
+  Underlay Routing Loopback IP Range: 192.0.255.0/24 # Typically Loopback0 IP Address Range
+  Underlay VTEP Loopback IP Range: 192.0.254.0/24 # Typically Loopback1 IP Address Range
+  Underlay Subnet IP Range: 172.30.255.0/24 # Address range to assign Numbered and Peer Link SVI IPs
+
+Manageability:
+  NTP Server IPs: 10.70.32.146,10.70.32.147
+#  Syslog Server IPs: 10.70.32.141,10.70.32.147
+
+

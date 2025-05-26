@@ -1,0 +1,9 @@
+---
+IP Address: 192.168.0.15
+Role: Leaf
+#Serial Number: 9XPIFKS4444
+
+#vlan: 20,2300,2301
+
+#vPC Pairing: False
+#vPC Peer: Site1-L2
