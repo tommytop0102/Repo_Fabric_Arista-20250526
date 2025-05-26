@@ -16,24 +16,24 @@ spine:
   defaults:
     platform: cEOS
     bgp_as: 65001
-    loopback_ipv4_pool: 192.0.255.0/24 #== Underlay Routing Loopback IP Range:
+    loopback_ipv4_pool: 192.0.255.0/24 #==> Underlay Routing Loopback IP Range:
   nodes:
     - name: s1-spine1 #== s1-spine1 hostname
       id: 1
-      mgmt_ip: 192.168.0.10/24 #== s1-spine1 mgmt ip
-    - name: s1-spine2  #== s1-spine2 hostname
+      mgmt_ip: 192.168.0.10/24 #==> s1-spine1 mgmt ip
+    - name: s1-spine2  #==> s1-spine2 hostname
       id: 2
-      mgmt_ip: 192.168.0.11/24 #== s1-spine2 mgmt ip
+      mgmt_ip: 192.168.0.11/24 #==> s1-spine2 mgmt ip
 
 l3leaf:
   defaults:
     platform: cEOS
-    loopback_ipv4_pool: 192.0.255.0/24 #== Underlay Routing Loopback IP Range:
+    loopback_ipv4_pool: 192.0.255.0/24 #==> Underlay Routing Loopback IP Range:
     loopback_ipv4_offset: 2
-    vtep_loopback_ipv4_pool: 192.0.254.0/24 #== Underlay VTEP Loopback IP Range: 
+    vtep_loopback_ipv4_pool: 192.0.254.0/24 #==> Underlay VTEP Loopback IP Range: 
     uplink_interfaces: [Ethernet2, Ethernet3]
-    uplink_switches: [s1-spine1, s1-spine2]
-    uplink_ipv4_pool: 172.30.255.0/24 #== Underlay Subnet IP Range: 
+    uplink_switches: [s1-spine1, s1-spine2] #==> s1-spine1, s1-spine2 hostname
+    uplink_ipv4_pool: 172.30.255.0/24 #==> Underlay Subnet IP Range: 
     mlag_interfaces: [Ethernet1, Ethernet6]
     mlag_peer_ipv4_pool: 10.255.252.0/24
     mlag_peer_l3_ipv4_pool: 10.255.251.0/24
@@ -45,24 +45,24 @@ l3leaf:
     - group: pod1
       bgp_as: 65101
       nodes:
-        - name: s1-leaf1 #== s1-leaf1 hostname
+        - name: s1-leaf1 #==> s1-leaf1 hostname
           id: 11
-          mgmt_ip: 192.168.0.12/24 #== s1-leaf1 mgmt ip
+          mgmt_ip: 192.168.0.12/24 #==> s1-leaf1 mgmt ip
           uplink_switch_interfaces: [Ethernet2, Ethernet2]
         - name: s1-leaf2 #== s1-leaf2 hostname
           id: 12
-          mgmt_ip: 192.168.0.13/24 #== s1-leaf2 mgmt ip
+          mgmt_ip: 192.168.0.13/24 #==> s1-leaf2 mgmt ip
           uplink_switch_interfaces: [Ethernet3, Ethernet3]
     - group: pod2
       bgp_as: 65102
       nodes:
-        - name: s1-leaf3 #== s1-leaf3 hostname
+        - name: s1-leaf3 #==> s1-leaf3 hostname
           id: 13
-          mgmt_ip: 192.168.0.14/24 #== s1-leaf3 mgmt ip
+          mgmt_ip: 192.168.0.14/24 #==> s1-leaf3 mgmt ip
           uplink_switch_interfaces: [Ethernet4, Ethernet4]
         - name: s1-leaf4 #== s1-leaf4 hostname
           id: 14
-          mgmt_ip: 192.168.0.15/24 #== s1-leaf4 mgmt ip
+          mgmt_ip: 192.168.0.15/24 #==> s1-leaf4 mgmt ip
           uplink_switch_interfaces: [Ethernet5, Ethernet5]
 
     - group: DC1_BORDER_LEAFS_GW
@@ -104,11 +104,11 @@ name_servers:
 
 ntp:
   servers:
-  - name: 10.70.32.146 #== NTP Server IPs: 
+  - name: 10.70.32.146 #==> NTP Server IPs: 
     preferred: true
     vrf: default
     iburst: true
-  - name: 10.70.32.147 #== NTP Server IPs: 
+  - name: 10.70.32.147 #==> NTP Server IPs: 
     preferred: true
     vrf: default
     iburst: true

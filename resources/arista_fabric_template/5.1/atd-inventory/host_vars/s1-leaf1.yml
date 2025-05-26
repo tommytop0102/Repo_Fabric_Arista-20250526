@@ -3,7 +3,7 @@
 network_ports:
   - switches:
       - s1-leaf1
-    switch_ports: # Ex Ethernet1-48 or Ethernet2-3/1-48
+    switch_ports: 
       - Ethernet4
     enabled: true
     description: test eth4 trunk port
