@@ -28,39 +28,50 @@ all:
                   type: super-spine
                   ansible_host: 192.168.0.203
 
+#########################################
+# Comment the field that get data value from source path/file for proto type translation script
+# Mentha Cheng will replace the below script
+# Begin here
+#########################################
 
-        ATD_DC1_FABRIC: #== XXX_FABRIC
+        ATD_DC1_FABRIC: #-- From 1_vxlan_fabric/fabric/ATD_DC1_FABRIC.yaml Fabric: -> "name: ATD_DC1_FABRIC"
           children:
-            ATD_DC1_SPINES: #== XXX_SPINES
-#              vars:
-#                type: spine
+
+###### If hostname start with "s1" and type is "Spine", then add host below ######
+            ATD_DC1_SPINES: #-- From above ATD_DC1_FABRIC, remove "FABRIC", and add "SPINES" to become "ATD_DC1_SPINES"
               hosts:
-                s1-spine1: #== s1-spine1 hostname
-                  type: spine
-                  ansible_host: 192.168.0.10 #== s1-spine1 mgmt ip
-                s1-spine2: #== s1-spine2 hostname
-                  type: spine
-                  ansible_host: 192.168.0.11 #== s1-spine2 mgmt ip
-            ATD_DC1_LEAFS: #== XXX_LEAFS
-#              vars:
-#                type: l3leaf
+                s1-spine1: #-- From inventory/host.yaml "s1-spine1"
+                  type: spine #-- From inventory/host.yaml s1-spine1 -> groups: -> "- Spine"
+                  ansible_host: 192.168.0.10 #-- From inventory/host.yaml s1-spine1: -> "hostname: 192.168.0.10"
+                s1-spine2: #-- From inventory/host.yaml "s1-spine2"
+                  type: spine #-- From inventory/host.yaml s1-spine2 -> groups: -> "- Spine"
+                  ansible_host: 192.168.0.11 #-- From inventory/host.yaml s1-spine2: -> "hostname: 192.168.0.11"
+
+###### If hostname start with "s1" and type is "Leaf", then add host below ######
+            ATD_DC1_LEAFS: #-- From above ATD_DC1_FABRIC, remove "FABRIC", and add "LEAFS" to become "ATD_DC1_LEAFS"
               children:
                 pod1:
                   hosts:
-                    s1-leaf1: #== s1-leaf1 hostname
-                      type: l3leaf
-                      ansible_host: 192.168.0.12 #== s1-leaf1 mgmt ip
-                    s1-leaf2: #== s1-leaf2 hostname
-                      type: l3leaf
-                      ansible_host: 192.168.0.13 #== s1-leaf2 mgmt ip
+                    s1-leaf1: #-- From inventory/host.yaml "s1-leaf1"
+                      type: l3leaf #-- From inventory/host.yaml s1-leaf1 -> groups: -> "- Leaf"
+                      ansible_host: 192.168.0.12 #-- From inventory/host.yaml s1-leaf1: -> "hostname: 192.168.0.12"
+                    s1-leaf2: #-- From inventory/host.yaml "s1-leaf2"
+                      type: l3leaf #-- From inventory/host.yaml s1-leaf2 -> groups: -> "- Leaf"
+                      ansible_host: 192.168.0.13 #-- From inventory/host.yaml s1-leaf2: -> "hostname: 192.168.0.13"
                 pod2:
                   hosts:
-                    s1-leaf3: #== s1-leaf3 hostname
-                      type: l3leaf
-                      ansible_host: 192.168.0.14  #== s1-leaf3 mgmt ip
-                    s1-leaf4: #== s1-leaf4 hostname
-                      type: l3leaf
-                      ansible_host: 192.168.0.15  #== s1-leaf4 mgmt ip
+                    s1-leaf3: #-- From inventory/host.yaml "s1-leaf3"
+                      type: l3leaf #-- From inventory/host.yaml s1-leaf3 -> groups: -> "- Leaf"
+                      ansible_host: 192.168.0.14 #-- From inventory/host.yaml s1-leaf3: -> "hostname: 192.168.0.14"
+                    s1-leaf4: #-- From inventory/host.yaml "s1-leaf4"
+                      type: l3leaf #-- From inventory/host.yaml s1-leaf4 -> groups: -> "- Leaf"
+                      ansible_host: 192.168.0.15 #-- From inventory/host.yaml s1-leaf4: -> "hostname: 192.168.0.15"
+
+#########################################
+# Comment the field that get data value from source path/file for proto type translation script
+# End here
+#########################################
+
             ATD_DC1_BORDER_LEAFS_GW: #== XXX_BORDER_LEAFS_GW
               vars:
                 evpn_overlay_bgp_rtc: true
@@ -71,7 +82,6 @@ all:
                 s1-brdr2:
                   type: l3leaf
                   ansible_host: 192.168.0.101
-
 
 
         ATD_DC2_FABRIC:

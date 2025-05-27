@@ -10,7 +10,7 @@ Role: Leaf
 
 Interface:
 
-  - Ethernet1/4:
+  - Ethernet4:
       policy: int_routed_host
       Interface VRF: bluevrf
       Interface IP: 10.192.195.21

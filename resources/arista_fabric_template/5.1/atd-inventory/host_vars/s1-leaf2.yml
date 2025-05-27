@@ -1,21 +1,30 @@
 ---
 # arista_fabric_template
+
+#########################################
+# Comment the field that get data value from source path/file for proto type translation script
+# Mentha Cheng will replace the below script
+# Begin here
+#########################################
+
 network_ports:
   - switches:
-      - s1-leaf2
+      - s1-leaf2 #-- From 3_node/leaf/s1-leaf2.yaml file name
     switch_ports:
-      - Ethernet4
+      - Ethernet4 #-- From 3_node/leaf/s1-leaf2.yaml "Ethernet4:"
     enabled: true
     mtu: 9000
-    profile: int_routed_host
+    profile: int_routed_host #-- From 3_node/leaf/s1-leaf2.yaml "policy: int_routed_host"
     structured_config:
-      ip_address: 10.192.195.21/24
-      vrf: bluevrf
-      description: test eth4 routed port
+      ip_address: 10.192.195.21/24 #-- From 3_node/leaf/s1-leaf2.yaml "Interface IP: 10.192.195.21"
+      vrf: bluevrf #-- From 3_node/leaf/s1-leaf2.yaml "Interface VRF: bluevrf"
+      description: test eth4 routed port #-- From 3_node/leaf/s1-leaf2.yaml "Interface Description: test eth4 trunk routed port"
       mtu: 
-#      type: routed
 
-
+#########################################
+# Comment the field that get data value from source path/file for proto type translation script
+# End here
+#########################################
 
 #network_ports:
 #  - switches:
