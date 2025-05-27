@@ -18,7 +18,7 @@ tenants:
           loopback: 100
           loopback_ip_range: 10.255.1.0/24
 
-###### If Layere2 Only: False, then add the below L3 config ######
+###### If 5_segment/network.yaml hostname -> "Layere2 Only: False", then add the below L3 config ######
         svis:
           - id: 2300 #-- From 5_segment/network.yaml "VLAN ID: 2300"
             name: bluenet1 #-- From 5_segment/network.yaml "- Network Name: bluenet1"
@@ -34,7 +34,7 @@ tenants:
             enabled: true
             ip_address_virtual: 192.168.12.1/24 #-- From 5_segment/network.yaml "IPv4 Gateway/NetMask: 192.168.12.1/24"
 
-###### If Layere2 Only: True, then add the below L3 config ######
+###### If 5_segment/network.yaml hostname -> "Layere2 Only: True", then add the below L3 config ######
     l2vlans:
       - id: 20 #-- From 5_segment/network.yaml "VLAN ID: 20"
         vni_override: 30020 #-- From 5_segment/network.yaml "Network ID: 30020"

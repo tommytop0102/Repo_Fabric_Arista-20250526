@@ -24,7 +24,7 @@ spine:
     bgp_as: 65001
     loopback_ipv4_pool: 192.0.255.0/24 #-- From 1_vxlan_evpn/fabric/ATD_DC1_FABRIC.yaml "Underlay Routing Loopback IP Range: 192.0.255.0/24"
 
-###### If hostname start with "s1" and type is "Spine", then add host below ######
+###### If inventory/host.yaml hostname start with "s1" and type is "Spine", then add host below ######
   nodes:
     - name: s1-spine1 #-- From inventory/host.yaml "s1-spine1"
       id: 1
@@ -51,7 +51,7 @@ l3leaf:
     spanning_tree_mode: mstp
     spanning_tree_priority: 16384
 
-###### If hostname start with "s1" and type is "Leaf", then add host below ######
+###### If inventory/host.yaml hostname start with "s1" and type is "Leaf", then add host below ######
   node_groups:
     - group: pod1
       bgp_as: 65101
