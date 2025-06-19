@@ -1,0 +1,20 @@
+---
+IP Address: 192.168.0.13
+Role: Leaf
+#Serial Number: 9XPIFKSI4N7
+
+#vlan: 20,2300,2301
+
+#vPC Pairing: False
+#vPC Peer: Site1-L2
+
+Interface:
+
+  - Ethernet4:
+      policy: int_routed_host
+      Interface VRF: bluevrf
+      Interface IP: 10.192.195.21
+      IP Netmask Length: 24
+      Interface Description: test eth4 routed port
+      MTU: 9000
+      Enable Interface: True

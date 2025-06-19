@@ -1,0 +1,19 @@
+---
+Switch:
+  Username: arista
+  Password: aristsa90vr
+
+CVP:
+  Username: admin
+  Password: arista90vr
+
+
+
+
+#Switch:
+#  Username: admin
+#  Password: C1sco12345!
+
+#NDFC:
+#  Username: admin
+#  Password: C1sco12345

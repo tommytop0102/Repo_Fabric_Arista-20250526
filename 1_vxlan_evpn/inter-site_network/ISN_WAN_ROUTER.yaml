@@ -1,0 +1,9 @@
+---
+AVD: 5.1
+
+Fabric:
+  name: ISN
+  type: Multisite & External Connectivity
+  Location: San Jose, US
+
+

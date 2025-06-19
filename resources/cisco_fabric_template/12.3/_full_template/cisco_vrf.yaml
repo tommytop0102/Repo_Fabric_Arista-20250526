@@ -1,0 +1,53 @@
+---
+VRF Name: # vrf
+VRF ID: # vrf
+VLAN ID: # vrf
+
+General Parameters:
+  VRF VLAN Name: # vrf
+  VRF Interface Description: # vrf
+  VRF Description: # vrf
+  Downstream VNI: # unused
+
+Advanced:
+  VRF Interface MTU: # Corp_Defaults
+  Loopback Routing Tag: # Corp_Defaults
+  Redistribute Direct Route Map: # Corp_Defaults
+  IPv6 Redistribute Direct Route Map: # Corp_Defaults
+  Max BGP Paths: # Corp_Defaults
+  Max iBGP Paths: # Corp_Defaults
+  Enable IPv6 link-local Option: # Corp_Defaults
+  Enable L3VNI w/o VLAN: # Corp_Defaults
+  Enable BGP Best-path As-path Multipath-relax: # Corp_Defaults
+  Advertise Host Routes: # Corp_Defaults
+  Advertise Default Route: # Corp_Defaults
+  Config Static 0/0 Route: # Corp_Defaults
+  BGP Neighbor Password: # unused
+  BGP Password Key Encryption Type: # unused
+  Enable Netflow: # Corp_Defaults
+  NetFlow Monitor: # unused
+
+TRM:
+  IPv4 TRM Enable: # Corp_Defaults
+  No RP: # unused
+  Is RP External: # unused
+  RP Address: # unused
+  RP Loopback ID: # unused
+  Underlay Mcast Address: # unused
+  Overlay Mcast Groups: # unused
+  TRMv6 Enable: # Corp_Defaults
+  TRMv6 No RP: # unused
+  Is TRMv6 RP External: # unused
+  TRMv6 RP Address: # unused
+  Overlay IPv6 Mcast Groups: # unused
+  Enable MVPN inter-as: # unused
+  Enable IPv4/IPv6 TRM BGW MSite: # unused
+
+Route Target:
+  Disable RT Auto-Generate: # Corp_Defaults
+  Import: # vrf
+  Export: # vrf
+  Import EVPN: # unused
+  Export EVPN: # unused
+  Import MVPN: # unused
+  Export MVPN: # unused

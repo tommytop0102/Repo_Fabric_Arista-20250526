@@ -1,0 +1,17 @@
+---
+AVD: 5.1
+
+Fabric:
+  name: ATD_DC2_FABRIC
+#  type: VXLAN
+#  Location: San Jose, US
+
+Resources:
+  Underlay Routing Loopback IP Range: 192.2.255.0/24
+  Underlay VTEP Loopback IP Range: 192.2.254.0/24
+  Underlay Subnet IP Range: 172.32.255.0/24
+
+Manageability:
+  NTP Server IPs: 10.70.32.146,10.70.32.147
+#  Syslog Server IPs: 10.70.32.141,10.70.32.147
+

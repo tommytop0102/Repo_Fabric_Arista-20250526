@@ -1,0 +1,64 @@
+---
+# arista_fabric_template
+
+#########################################
+# Comment the field that get data value from source path/file for proto type translation script
+# Mentha Cheng will replace the below script
+# Begin here
+#########################################
+
+servers:
+  - name: s1-leaf3_s1-leaf4_vPC1 #-- From 3_node/_vpc/s1-leaf3_s1-leaf4_vPC1.yaml file name 
+#    rack: pod2
+    adapters:
+      - endpoint_ports: [NIC1, NIC2]
+        switch_ports:
+          - Ethernet4 #-- From 3_node/_vpc/s1-leaf3_s1-leaf4_vPC1.yaml "Peer-1 Member Interfaces: Etherent4"
+          - Ethernet4 #-- From 3_node/_vpc/s1-leaf3_s1-leaf4_vPC1.yaml "Peer-2 Member Interfaces: Etherent4"
+        switches:
+          - s1-leaf3 #-- From 3_node/_vpc/s1-leaf3_s1-leaf4_vPC1.yaml file name "s1-leaf3" - 1st word
+          - s1-leaf4 #-- From 3_node/_vpc/s1-leaf3_s1-leaf4_vPC1.yaml file name "s1-leaf3"  file name "s1-leaf4" - 2nd word
+        profile: int_vpc_trunk_host #-- From 3_node/_vpc/s1-leaf3_s1-leaf4_vPC1.yaml "Name: int_vpc_trunk_host" 
+        enabled: true
+        mtu:
+        vlans: "20" #-- From 3_node/_vpc/s1-leaf3_s1-leaf4_vPC1.yaml "Peer-1 Trunk Allowed Vlans: 20" 
+        port_channel:
+          description: PortChannel
+          mode: active #-- From 3_node/_vpc/s1-leaf3_s1-leaf4_vPC1.yaml "Port Channel Mode: active" 
+          channel_id: 4
+
+#########################################
+# Comment the field that get data value from source path/file for proto type translation script
+# End here
+#########################################
+
+
+#  - name: s2-host1
+#    rack: s2-rack2
+#    adapters:
+#      - endpoint_ports: [NIC1, NIC2]
+#        switch_ports:
+#          - Ethernet4
+#          - Ethernet4
+#        switches:
+#          - s2-leaf1
+#          - s2-leaf2
+#        profile: int_vpc_trunk_host
+#        enabled: true
+#        mtu: 9000
+#        vlans: "110-112,222,333"
+#        port_channel:
+#          description: PortChannel
+#          mode: active
+
+
+#  - name: s1-host1
+#    rack: pod1
+#    adapters:
+#      - endpoint_ports: [Eth1, Eth2]
+#        switch_ports: [Ethernet4, Ethernet4]
+#        switches: [s1-leaf1, s1-leaf2]
+#        profile: TENANT_A
+#        port_channel:
+#          description: PortChannel
+#          mode: active

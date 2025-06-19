@@ -1,0 +1,52 @@
+---
+# arista_fabric_template
+
+#########################################
+# Comment the field that get data value from source path/file for proto type translation script
+# Mentha Cheng will replace the below script
+# Begin here - 
+#########################################
+
+network_ports:
+  - switches:
+      - s1-leaf1 #-- From 3_node/leaf/s1-leaf1.yaml file name
+    switch_ports: 
+      - Ethernet4 #-- From 3_node/leaf/s1-leaf1.yaml "Ethernet4:"
+    enabled: true
+    description: test eth4 trunk port #-- From 3_node/leaf/s1-leaf1.yaml "Interface Description: test eth4 trunk port"
+    mtu: 
+    vlans: "20,2300,2301" #-- From 3_node/leaf/s1-leaf1.yaml "Trunk Allowed Vlans: 20,2300,2301"
+    profile: int_trunk_host #-- From 3_node/leaf/s1-leaf1.yaml "policy: int_trunk_host"
+
+#########################################
+# Comment the field that get data value from source path/file for proto type translation script
+# End here
+#########################################
+
+
+#  - switches:
+#      - s1-leaf1
+#    switch_ports: # Ex Ethernet1-48 or Ethernet2-3/1-48
+#      - Ethernet1
+#    enabled: true
+#    description: teset etherent4
+#    mtu: 9000
+#    mode: trunk
+#    vlans: "2033"
+#    profile: int_trunk_host
+
+
+
+
+
+#  - switches:
+#      - s1-leaf[1]
+#    switch_ports:
+#      - Ethernet6
+#    enabled: true
+#    description:
+#    mode: access
+#    vlans: "2400"
+
+
+
