@@ -1,26 +1,20 @@
 ---
-IP Address: 192.168.0.12
+IP Address: 192.168.0.124
 Role: Leaf
-#Serial Number: 9H3NIVJ0I12
+#Serial Number: 9H3NIVJ0124
 
 #vlan: 20,2300,2301
 
 #vPC Pairing: False
-#vPC Peer: Site1-L1
+#vPC Peer: Site2-L3
 
 Interface:
 
-  - Ethernet4:
-      policy: int_trunk_host
-      Trunk Allowed Vlans: 20,2300,2301
-      Interface Description: test eth4 trunk port
-      MTU: # Blank (controlled by policy)
-      Enable Interface: True
 
   - Ethernet6:
       policy: int_routed_host
       Interface VRF: bluevrf
-      Interface IP: 10.192.16.254
+      Interface IP: 10.192.236.254
       IP Netmask Length: 24
       Interface Description: test eth6 routed port
       MTU: 9000

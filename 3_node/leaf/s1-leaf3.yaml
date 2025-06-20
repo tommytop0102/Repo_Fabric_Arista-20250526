@@ -1,9 +1,20 @@
 ---
 IP Address: 192.168.0.14
 Role: Leaf
-#Serial Number: 9XPIFKS3333
+#Serial Number: 9XPIFKS3314
 
 #vlan: 20,2300,2301
 
 #vPC Pairing: False
-#vPC Peer: Site1-L2
+#vPC Peer: Site1-L3
+
+Interface:
+
+  - Ethernet6:
+      policy: int_routed_host
+      Interface VRF: bluevrf
+      Interface IP: 10.192.36.254
+      IP Netmask Length: 24
+      Interface Description: test eth6 routed port
+      MTU: 9000
+      Enable Interface: True

@@ -43,3 +43,35 @@ s1-leaf4:
   hostname: 192.168.0.15
   groups:
     - Leaf
+
+
+# DC2 management ip
+s2-spine1:
+  hostname: 192.168.0.20
+  groups:
+    - Spine
+
+s2-spine2:
+  hostname: 192.168.0.21
+  groups:
+    - Spine
+
+s2-leaf1:
+  hostname: 192.168.0.122
+  groups:
+    - Leaf
+
+s2-leaf2:
+  hostname: 192.168.0.123
+  groups:
+    - Leaf
+
+s2-leaf3:
+  hostname: 192.168.0.124
+  groups:
+    - Leaf
+
+s2-leaf4:
+  hostname: 192.168.0.125
+  groups:
+    - Leaf

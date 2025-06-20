@@ -147,7 +147,7 @@ all:
 
   vars:
     ansible_user: arista #== switch and CVP username
-    ansible_password: arista90vr #== switch and CVP password
+    ansible_password: l5knazzlskvvjahb #== switch and CVP password
     
 #    ansible_password: "{{ lookup('env', 'LABPASSPHRASE') }}"
     ansible_network_os: arista.eos.eos

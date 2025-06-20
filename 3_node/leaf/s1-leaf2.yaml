@@ -1,7 +1,7 @@
 ---
 IP Address: 192.168.0.13
 Role: Leaf
-#Serial Number: 9XPIFKSI4N7
+#Serial Number: 9XPIFKSI413
 
 #vlan: 20,2300,2301
 
@@ -11,10 +11,17 @@ Role: Leaf
 Interface:
 
   - Ethernet4:
+      policy: int_trunk_host
+      Trunk Allowed Vlans: 20,2300,2301
+      Interface Description: test eth4 trunk port
+      MTU: # Blank (controlled by policy)
+      Enable Interface: True
+
+  - Ethernet6:
       policy: int_routed_host
       Interface VRF: bluevrf
-      Interface IP: 10.192.195.21
+      Interface IP: 10.192.26.254
       IP Netmask Length: 24
-      Interface Description: test eth4 routed port
+      Interface Description: test eth6 routed port
       MTU: 9000
       Enable Interface: True
